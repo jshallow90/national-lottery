@@ -7,14 +7,12 @@ logger.setLevel('INFO')
 
 
 class NationalLottery(object):
-    def __init__(self, numbers: tuple=None):
-        if numbers:
+    def __init__(self, numbers: tuple=None, bonus_ball: int=None):
+        if numbers and bonus_ball:
             self.main_balls = numbers
-            self.bonus_ball = None
+            self.bonus_ball = bonus_ball
         else:
-            main_balls, bonus = self.draw_lottery_numbers()
-            self.main_balls = main_balls
-            self.bonus_ball = bonus
+            self.main_balls, self.bonus_ball = self.draw_lottery_numbers()
 
         if any([self.main_balls.count(x) > 1 for x in self.main_balls]):
             raise ValueError("Duplicate values are not allowed in lottery ball selection")
