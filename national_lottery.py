@@ -1,6 +1,6 @@
 from packages.Winnings import Winnings
 from packages.NationalLottery import NationalLottery
-from national_lottery.utils import get_logger as gl
+from app.utils import get_logger as gl
 
 logger = gl.get_default_logger(__name__)
 logger.setLevel('INFO')

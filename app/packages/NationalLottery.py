@@ -1,6 +1,6 @@
 import random
 
-from national_lottery.utils import get_logger as gl
+from app.utils import get_logger as gl
 
 logger = gl.get_default_logger('NationalLottery')
 logger.setLevel('INFO')
